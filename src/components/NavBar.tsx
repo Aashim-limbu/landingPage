@@ -36,10 +36,10 @@ export default function NavBar() {
 						Sign up for Free
 					</button>
 				</div>
-				<div>
+				<div className="md:hidden">
 					<button
 						onClick={() => setIsOpen((o) => !o)}
-						className="flex items-center justify-center bg-gray-100 p-1 hover:shadow-sm rounded-md md:hidden "
+						className="flex items-center justify-center bg-gray-100 p-1 hover:shadow-sm rounded-md"
 					>
 						<img className="w-10" src={`${isOpen ? Close : Menu}`} alt="menu" />
 					</button>
