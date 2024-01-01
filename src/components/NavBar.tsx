@@ -14,7 +14,7 @@ export default function NavBar() {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div className="h-[75px] border-b-2  border-b-[#E7E9EB]">
-			<div className="md:max-w-[1480px] max-w-[500px] m-auto w-full mb-1 h-full flex justify-between items-center">
+			<div className="md:max-w-[1480px] max-w-[600px] m-auto w-full mb-1 h-full flex justify-between items-center">
 				<img className="h-[25px]" src={Logo} alt="logo" />
 				<div className="hidden md:flex items-center font-semibold">
 					<ul className="flex">
@@ -48,7 +48,7 @@ export default function NavBar() {
 			<div
 				className={
 					isOpen
-						? "absolute w-full md:hidden z-10 bg-white"
+						? "absolute w-full md:hidden z-10 bg-white py-8"
 						: "hidden"
 				}
 			>
@@ -62,7 +62,7 @@ export default function NavBar() {
 						</li>
 					))}
 				</ul>
-				<div className="flex flex-col gap-2 mt-2">
+				<div className="flex flex-col gap-y-4 mt-2">
 					<button className="flex justify-center text-xl hover:text-secondaryText font-semibold shadow-md px-10 py-3 border border-gray-300">
 						<img src={Lock} /> Login
 					</button>
