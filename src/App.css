@@ -5,3 +5,15 @@
 #root{
 font-family: 'Public Sans', sans-serif;
 }
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+  font-size:40px;
+}
+.slick-next:before{
+    margin-left:-3rem;
+}
+.slick-prev{
+    margin-left:2px;
+    z-index:10;
+}

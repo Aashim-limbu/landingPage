@@ -10,7 +10,7 @@ function StarArray({ star }: StarPropsType) {
 	return (
 		<div className="flex gap-1">
 			{starArray.map((s) => (
-				<span>
+				<span key={s}>
 					{star >= s ? (
 						<img className="w-5" src={Star} alt="star" />
 					) : (
