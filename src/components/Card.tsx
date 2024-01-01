@@ -8,14 +8,14 @@ type CardProps = {
 	course: string;
 	details: string;
 };
-function Card({item}:{item:CardProps}) {
-  return (
-		<div className="shadow-md mr-4 my-4 rounded-2xl">
+function Card({ item }: { item: CardProps }) {
+	return (
+		<div className="shadow-md mr-4 my-4 rounded-2xl overflow-hidden flex flex-col">
 			<div className="flex  border border-b-gray-300 flex-col gap-2 bg-white relative p-4 rounded-t-2xl">
-				<img src={item.imageSrc} alt={`Image ${item.id}`} />
+				<img className="w-full max-h-[200px] object-cover" src={item.imageSrc} alt={`Image ${item.id}`} />
 				<p className="text-secondaryText">{item.details}</p>
 				<StarArray star={item.star} />
-				<p className="absolute bg-white left-5  top-5 p-1 px-2 rounded-xl cursor-pointer bg-opacity-70">
+				<p className="absolute bg-white left-5  top-5 p-1 px-2 rounded-xl cursor-pointer bg-opacity-70 flex-grow">
 					{item.course}
 				</p>
 			</div>

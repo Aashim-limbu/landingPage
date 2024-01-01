@@ -3,6 +3,8 @@ import One from "../assets//Course1.png";
 import Two from "../assets/Course2.png";
 import Three from "../assets/Course3.png";
 import Four from "../assets/Course4.png";
+import Five from "../assets/Course5.png";
+import Six from "../assets/Course6.png";
 import Card from "./Card";
 
 const Categories = [
@@ -12,7 +14,6 @@ const Categories = [
 		price: 500,
 		star: 5,
 		course: "HTML",
-
 		details: "Various versions have evolved daf",
 	},
 	{
@@ -36,17 +37,34 @@ const Categories = [
 		imageSrc: Four,
 		price: 500,
 		star: 4,
-		course: "UI/UX",
+		course: "JavaScript",
 		details: "Various versions have evolved daf",
 	},
+	{
+		id: 5,
+		imageSrc: Five,
+		price: 500,
+		star: 4,
+		course: "React",
+		details: "Various versions have evolved daf",
+	},
+	{
+		id: 6,
+		imageSrc: Six,
+		price: 500,
+		star: 5,
+		course: "Python",
+		details: "Various versions have evolved daf",
+	},
+
 ];
 function Courses() {
 	const settings = {
 		dots: true,
 		infinite: false,
 		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 3,
+		slidesToShow: 4,
+		slidesToScroll: 4,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -85,7 +103,7 @@ function Courses() {
 				<p className="text-secondaryText py-5 mb-5">
 					Various versions have evolved over the years, sometimes by accident,
 				</p>
-				<div className="">
+				<div>
 					<Slider {...settings}>
 						{Categories.map((item) => (
 							<Card key={item.id} item={item} />

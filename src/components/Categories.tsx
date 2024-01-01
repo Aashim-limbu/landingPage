@@ -96,7 +96,7 @@ function Categories() {
 				<p className="text-secondaryText py-4">
 					Various versions have evolved over the years, sometimes by accident,
 				</p>
-				<div className="md:my-10 grid md:grid-cols-4 gap-4">
+				<div className="md:my-10 grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4  gap-4">
 					{categories.map((item) => (
 						<div
 							key={item.id}
