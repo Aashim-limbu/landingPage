@@ -53,13 +53,13 @@ function FeedBack() {
 		infinite: false,
 		speed: 500,
 		slidesToShow: 3,
-		slidesToScroll: 3,
+		slidesToScroll: 1,
 		responsive: [
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2,
+					slidesToShow: 3,
+					slidesToScroll: 1,
 					infinite: false,
 					dots: true,
 				},
@@ -67,7 +67,7 @@ function FeedBack() {
 			{
 				breakpoint: 600,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 2,
 					slidesToScroll: 1,
 				},
 			},
@@ -81,31 +81,31 @@ function FeedBack() {
 		],
 	};
 	return (
-		<div className="bg-white w-full md:py-[147px] py-10">
+		<div className="bg-white w-full md:py-[147px] py-20">
 			<div className="md:max-w-[1480px] max-w-[600px] m-auto">
-				<p className="text-[40px] font-semibold">
+				<p className="md:text-[40px] text-xl font-semibold">
 					Student <span className="text-primary">Feedback</span>
 				</p>
-				<p className="text-secondaryText">
+				<p className="text-secondaryText md:py-10 py-5">
 					Various versions have evolved over the years, sometimes by accident,
 				</p>
-				<div className="md:py-12">
+				<div className="md:py-12 px-10 flex flex-col">
 					<Slider {...settings}>
 						{FeedBacks.map((item) => (
-							<div className="bg-white rounded-md max-w-[450px] shadow-md aspect-video flex flex-col overflow-hidden my-10 mx-4 p-4 ">
+							<div className="bg-white rounded-md lg:max-w-[450px] md:max-w-[300px] max-w-[200px] shadow-md flex flex-col overflow-hidden my-10 mx-4 p-4 ">
 								<div className="flex justify-between items-start mb-5">
 									<div className="flex gap-x-2">
 										<img
-											className="w-20 h-20 rounded-full object-cover"
+											className="md:w-20 md:h-20 w-10 h-10 rounded-full object-cover"
 											src={item.image}
 											alt={item.name}
 										/>
 										<div>
-											<p className="font-semibold text-xl">{item.name}</p>
-											<p>{item.position}</p>
+											<p className="font-semibold md:text-xl text-lg">{item.name}</p>
+											<p className="md:text-base text-sm">{item.position}</p>
 										</div>
 									</div>
-									<img src={Quote} className="w-10" alt="quotation" />
+									<img src={Quote} className="lg:w-10 md:w-7 w-5" alt="quotation" />
 								</div>
 								<div className="text-base max-w-[600px] py-2">{item.comments}</div>
 							</div>

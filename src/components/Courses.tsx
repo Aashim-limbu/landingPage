@@ -6,6 +6,8 @@ import Four from "../assets/Course4.png";
 import Five from "../assets/Course5.png";
 import Six from "../assets/Course6.png";
 import Card from "./Card";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Categories = [
 	{
@@ -94,8 +96,13 @@ function Courses() {
 			// instead of a settings object
 		],
 	};
+    const ref = useRef<HTMLDivElement>(null)
+    const {scrollYProgress} = useScroll({
+        target:ref,
+        offset:["0 1","1.33 1"]
+    })
 	return (
-		<div className="bg-[#e9f8f3] bg-opacity-[0.7] w-full">
+		<motion.div style={{opacity:scrollYProgress}} ref={ref} className="bg-[#e9f8f3] bg-opacity-[0.7] w-full">
 			<div className="md:max-w-[1480px] max-w-[600px] md:py-[200px] py-10  m-auto">
 				<p className="md:text-[56px] text-2xl font-semibold py-5">
 					Most Popular <span className="text-primary">Courses</span>
@@ -103,7 +110,7 @@ function Courses() {
 				<p className="text-secondaryText py-5 mb-5">
 					Various versions have evolved over the years, sometimes by accident,
 				</p>
-				<div>
+				<div className="px-10">
 					<Slider {...settings}>
 						{Categories.map((item) => (
 							<Card key={item.id} item={item} />
@@ -111,7 +118,7 @@ function Courses() {
 					</Slider>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
 

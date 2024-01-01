@@ -88,7 +88,7 @@ const categories = [
 
 function Categories() {
 	return (
-		<div className="bg-[#F0FBF7] w-full md:py-[135px]">
+		<div className="bg-[#F0FBF7] w-full md:py-[135px] py-10">
 			<div className="md:max-w-[1480px] max-w-[600px] m-auto">
 				<p className="text-[40px] font-semibold">
 					Most <span className="text-primary">Popular Categories</span>
