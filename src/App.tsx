@@ -9,7 +9,7 @@ import FeedBack from "./components/FeedBack";
 import Qta from "./components/Qta";
 function App() {
 	return (
-        <div>
+        <div className="relative">
             <NavBar/>
             <Hero/>
             <Companies/>

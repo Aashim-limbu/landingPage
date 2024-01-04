@@ -2,14 +2,9 @@ import Logo from "../assets/Practice.svg";
 import Lock from "../assets/Lock.svg";
 import Menu from "../assets/menu.svg";
 import Close from "../assets/close.svg";
+import { Link } from "react-scroll";
 import { useState } from "react";
-const items = [
-	{ id: 1, name: "Home" },
-	{ id: 2, name: "About" },
-	{ id: 3, name: "Course" },
-	{ id: 4, name: "Blog" },
-	{ id: 5, name: "Contact" },
-];
+import { items } from "../data/items";
 export default function NavBar() {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
@@ -19,12 +14,17 @@ export default function NavBar() {
 				<div className="hidden md:flex items-center font-semibold">
 					<ul className="flex">
 						{items.map((item) => (
-							<li
-								className="ml-3 cursor-pointer text-secondaryText hover:text-primary ease-in transition-colors "
-								key={item.id}
+							<Link
+								to={item.name}
+								spy={true}
+								smooth={true}
+								offset={50}
+								duration={500}
+								className="text-secondaryText hover:text-primary ml-5 p-2  ease-in transition-colors "
+								activeClass="text-primary"
 							>
 								{item.name}
-							</li>
+							</Link>
 						))}
 					</ul>
 				</div>
@@ -47,9 +47,7 @@ export default function NavBar() {
 			</div>
 			<div
 				className={
-					isOpen
-						? "absolute w-full md:hidden z-10 bg-white py-8"
-						: "hidden"
+					isOpen ? "absolute w-full md:hidden z-10 bg-white py-8" : "hidden"
 				}
 			>
 				<ul className="text-center">

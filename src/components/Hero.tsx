@@ -1,8 +1,9 @@
 import HeroImg from "../assets/Hero.png";
 import Search from "../assets/MagnifyingGlass.svg";
+import { Element } from "react-scroll";
 function Hero() {
 	return (
-		<div className="w-full bg-white">
+		<Element name="Home" className="w-full bg-white">
 			<div className="md:max-w-[1480px] max-w-[600px] m-auto grid md:grid-cols-2 md:py-20 py-5">
 				<section className=" max-w-[700px] flex flex-col gap-2 py-2">
 					<p className="text-2xl font-semibold text-[#20B486]">
@@ -32,7 +33,7 @@ function Hero() {
 					alt="hero-image"
 				/>
 			</div>
-		</div>
+		</Element>
 	);
 }
 
